@@ -209,7 +209,7 @@ def cmd_txt2csv(args):
 # ── 3. Filter ──
 
 def cmd_filter(args):
-    """只保留指定前缀的行（TEXT/Btn/Title/Name/...），其余置空。"""
+    """只保留指定前缀的行，其余置空。跳过全空文件。"""
     input_dir = args.input
     output_dir = args.output
 
@@ -222,15 +222,33 @@ def cmd_filter(args):
             return False
         return line.startswith(KEEP_PREFIXES)
 
+    kept = skipped = 0
+    empty_files = []
+
     for csv_path in walk_files(input_dir, '.csv'):
         rel = relpath_structure(csv_path, input_dir)
-        out_path = os.path.join(output_dir, rel)
-        ensure_dir(os.path.dirname(out_path))
-
         lines = read_lines(csv_path)
         new_lines = [l if should_keep(l) else ',\n' for l in lines]
+
+        # 跳过全空文件（仅剩表头+空行）
+        has_content = any(
+            l.strip() not in ('', ',') for l in new_lines[1:]
+        )
+        if not has_content:
+            empty_files.append(rel)
+            skipped += 1
+            continue
+
+        out_path = os.path.join(output_dir, rel)
+        ensure_dir(os.path.dirname(out_path))
         write_lines(out_path, new_lines)
-        print(f"处理: {rel}")
+        kept += 1
+
+    print(f"保留: {kept}  跳过(全空): {skipped}")
+    if empty_files:
+        print(f"跳过的文件列表已写入: {os.path.join(output_dir, '_skipped_empty.txt')}")
+        write_lines(os.path.join(output_dir, '_skipped_empty.txt'),
+                    [f + '\n' for f in empty_files])
 
 
 # ── 4. Restore ──

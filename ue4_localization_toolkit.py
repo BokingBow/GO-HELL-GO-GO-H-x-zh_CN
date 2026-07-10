@@ -215,11 +215,18 @@ def cmd_filter(args):
 
     KEEP_PREFIXES = ('TEXT', 'Btn', 'Title', 'Name', 'Description',
                      'Comment', 'FuncText', 'ChapterName', 'NextMission',
-                     'Guide', 'Start')
+                     'Guide', 'Start', 'CharacterName', 'SkillName')
+
+    def has_nonascii(val):
+        return any(ord(c) > 127 for c in val)
 
     def should_keep(line):
         if not line.strip():
             return False
+        # FuncText: 仅当值含非ASCII字符时才保留
+        if line.startswith('FuncText'):
+            _, _, val = line.partition(',')
+            return has_nonascii(val.strip())
         return line.startswith(KEEP_PREFIXES)
 
     kept = skipped = 0
@@ -228,6 +235,7 @@ def cmd_filter(args):
     for csv_path in walk_files(input_dir, '.csv'):
         rel = relpath_structure(csv_path, input_dir)
         lines = read_lines(csv_path)
+
         new_lines = [l if should_keep(l) else ',\n' for l in lines]
 
         # 跳过全空文件（仅剩表头+空行）
@@ -236,19 +244,27 @@ def cmd_filter(args):
         )
         if not has_content:
             empty_files.append(rel)
+            print(f"[跳过] {rel}")
             skipped += 1
             continue
 
         out_path = os.path.join(output_dir, rel)
         ensure_dir(os.path.dirname(out_path))
         write_lines(out_path, new_lines)
+        print(f"[保留] {rel}")
         kept += 1
 
     print(f"保留: {kept}  跳过(全空): {skipped}")
     if empty_files:
-        print(f"跳过的文件列表已写入: {os.path.join(output_dir, '_skipped_empty.txt')}")
-        write_lines(os.path.join(output_dir, '_skipped_empty.txt'),
-                    [f + '\n' for f in empty_files])
+        path = os.path.join(output_dir, '_skipped_empty.txt')
+        print(f"跳过的文件列表已写入: {path}")
+        write_lines(path, [f + '\n' for f in empty_files])
+
+    print(f"保留: {kept}  跳过(全空): {skipped}")
+    if empty_files:
+        path = os.path.join(output_dir, '_skipped_empty.txt')
+        print(f"跳过的文件列表已写入: {path}")
+        write_lines(path, [f + '\n' for f in empty_files])
 
 
 # ── 4. Restore ──

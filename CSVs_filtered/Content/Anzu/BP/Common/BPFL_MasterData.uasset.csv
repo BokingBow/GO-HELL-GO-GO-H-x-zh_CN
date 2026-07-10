@@ -1,14 +1,14 @@
 ,
 FuncText0,キャラクターマスターにＩＤが見つからない
 FuncText1,レベルマスターにＩＤが見つからない
-FuncText2,
+,
 FuncText2,バフマスターにＩＤが見つからない
 FuncText3,アイテムマスターにＩＤが見つからない
 FuncText5,亡者マスターにＩＤが見つからない
 FuncText8,EnemyMasterにＩＤがない
 FuncText10,BrockマスターにＩＤが存在しない
 FuncText11,ダンジョンマスターにＩＤが見つからない
-FuncText12,None
+,
 FuncText12,ダンジョンアクタマスターにＩＤが見つからない
 FuncText13,属性マスターにＩＤが見つからない
 FuncText15,チャプターマスターにＩＤが見つからない
@@ -17,14 +17,14 @@ FuncText17,HellPassiveマスターにCategoryIDが存在しない
 FuncText18,HellARmsマスターにＩＤが存在しない
 FuncText21,EventItemマスターにCategoryIDが存在しない
 FuncText23,バトルマスターにＩＤが見つからない
-FuncText25,ID= 
+,
 FuncText25,  ユニーク亡者マスターにＩＤが見つからない
 FuncText26,ショップマスターにＩＤが見つからない
 FuncText27,ダンジョンバフマスターにＩＤが見つからない
 FuncText28,ショップマスターにＩＤが見つからない
 FuncText29,アイテムマスターにＩＤが見つからない
-FuncText32,
+,
 FuncText32,こいつは地獄をわかってないオーソドックスに火盆地獄いくかそうしよう
 FuncText32,熱湯で責めるもオーソドックスだな次はそいつでわからせてみるかそうしよう
 FuncText32,オーソドックスでも何でもないが畏熟地獄でわからせたくなったそうしよう
-FuncText32,
+,

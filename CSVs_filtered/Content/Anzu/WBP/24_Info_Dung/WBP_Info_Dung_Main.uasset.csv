@@ -1,0 +1,66 @@
+,
+FuncText0,
+Name_2_74301688454C2D8C3CF58086EB311E2A,
+,
+Description_40_380E7C50473D515293A1FB98408FFBBF,
+Comment_43_4768A60946536D5EBD404D8142B10FCC,
+,
+,
+,
+Name,CanvasPanel_0
+Name,Base_1
+Name,WBP_Info_Dung_L_GRP
+Name,WBP_Info_Dung_C1_Title
+Name,WBP_Info_Dung_C2_Food_Scroll_2
+,
+,
+,
+,
+,
+Name,CanvasPanel_0
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Btn_Cmn_Text_M, キャンセル
+Btn_Cmn_Tex_M_Sub,   SNACK  CANCEL
+Btn_Cmn_Text_M, 携行
+Btn_Cmn_Tex_M_OK_Sub,　TAKE  SNACK
+Btn_Cmn_Text_L_Main,清掃業務へ
+Btn_Cmn_Text_L_Sub,GO   TO   CLEANUP
+,
+,
+Title_L01_Text_Main,清掃業務
+Title_L02_Text_Main,清掃業務
+Title_L03_Text_Main,清掃業務
+Title_L_Text_Sub,CLEAN UP WORK
+Guide_1,
+Guide_2,77BC22E74C488E32954D6DA911C13C2F
+Guide_3,夜食を決定/キャンセル
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,

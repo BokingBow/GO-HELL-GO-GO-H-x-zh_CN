@@ -91,8 +91,17 @@ def cmd_export(args):
     tool = args.tool
     target_dir = args.dir
     output_root = args.output
-    subfolder = args.subfolder or ""
+    subfolder = args.subfolder
     filelist = args.filelist
+
+    def scan_dir(folder_path):
+        paths = []
+        for root, _, files in os.walk(folder_path):
+            for file in files:
+                if file.endswith('.uasset'):
+                    rel = os.path.relpath(os.path.join(root, file), target_dir)
+                    paths.append(rel)
+        return paths
 
     def export_one(rel_path):
         uasset_path = os.path.join(target_dir, rel_path)
@@ -123,24 +132,18 @@ def cmd_export(args):
     ensure_dir(output_root)
 
     if filelist:
-        # 从文件清单读取
         with open(filelist, 'r', encoding='utf-8') as f:
             paths = [line.strip() for line in f if line.strip() and not line.startswith('#')]
     elif subfolder:
-        # 扫描指定子目录
-        full_path = os.path.join(target_dir, subfolder)
-        if not os.path.exists(full_path):
-            print(f"[错误] 不存在: {full_path}")
-            sys.exit(1)
         paths = []
-        for root, _, files in os.walk(full_path):
-            for file in files:
-                if file.endswith('.uasset'):
-                    rel = os.path.relpath(os.path.join(root, file), target_dir)
-                    paths.append(rel)
+        for sf in subfolder:
+            full_path = os.path.join(target_dir, sf)
+            if not os.path.exists(full_path):
+                print(f"[错误] 不存在: {full_path}")
+                sys.exit(1)
+            paths.extend(scan_dir(full_path))
     else:
-        print("[错误] 需指定 --subfolder 或 --filelist")
-        sys.exit(1)
+        paths = scan_dir(target_dir)
 
     print(f"共 {len(paths)} 个文件")
     ok = fail = 0
@@ -206,14 +209,18 @@ def cmd_txt2csv(args):
 # ── 3. Filter ──
 
 def cmd_filter(args):
-    """将以 Arg/Command/PageCtrl 开头的行置空（保留逗号占位）。"""
+    """只保留指定前缀的行（TEXT/Btn/Title/Name/...），其余置空。"""
     input_dir = args.input
     output_dir = args.output
 
-    def should_blank(line):
+    KEEP_PREFIXES = ('TEXT', 'Btn', 'Title', 'Name', 'Description',
+                     'Comment', 'FuncText', 'ChapterName', 'NextMission',
+                     'Guide', 'Start')
+
+    def should_keep(line):
         if not line.strip():
             return False
-        return line.startswith('Arg') or line.startswith('Command') or line.startswith('PageCtrl')
+        return line.startswith(KEEP_PREFIXES)
 
     for csv_path in walk_files(input_dir, '.csv'):
         rel = relpath_structure(csv_path, input_dir)
@@ -221,7 +228,7 @@ def cmd_filter(args):
         ensure_dir(os.path.dirname(out_path))
 
         lines = read_lines(csv_path)
-        new_lines = [',\n' if should_blank(l) else l for l in lines]
+        new_lines = [l if should_keep(l) else ',\n' for l in lines]
         write_lines(out_path, new_lines)
         print(f"处理: {rel}")
 
@@ -577,7 +584,7 @@ def main():
     p.add_argument('--dir', required=True, help='.uasset 目录')
     p.add_argument('--tool', required=True, help='UE4localizationsTool.exe 路径')
     p.add_argument('--output', required=True, help='输出目录')
-    p.add_argument('--subfolder', help='扫描子文件夹（相对路径）')
+    p.add_argument('--subfolder', action='append', help='扫描子文件夹（相对路径），可多次指定')
     p.add_argument('--filelist', help='文件清单（每行一个相对路径）')
 
     # 2. txt2csv
@@ -586,7 +593,7 @@ def main():
     p.add_argument('--output', required=True)
 
     # 3. filter
-    p = sub.add_parser('filter', help='置空 Arg/Command/PageCtrl 行')
+    p = sub.add_parser('filter', help='只保留 TEXT/Btn/Title/Name 等前缀行，其余置空')
     p.add_argument('--input', required=True)
     p.add_argument('--output', required=True)
 

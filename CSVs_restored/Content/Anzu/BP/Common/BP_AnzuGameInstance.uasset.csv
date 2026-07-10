@@ -1,15 +1,15 @@
 ,
-FuncText0,事件测试 已重新激活
-FuncText0,事件测试 将停用
+FuncText0,イベントテスト Has Reactivated
+FuncText0,イベントテスト Will Deactivate
 ,
-FuncText0,事件测试 已进入前台
-FuncText0,事件测试 将终止
-FuncText0,事件测试 将进入后台
-FuncText0,事件测试 注册失败
-FuncText0,事件测试 收到远程通知
-FuncText0,事件测试 本地通知
-FuncText0,事件测试 屏幕方向
-FuncText0,事件测试 屏幕方向
-FuncText0,事件测试 已注册远程通知
-FuncText0,事件测试 已注册用户通知
-FuncText0,事件测试 应卸载资源
+FuncText0,イベントテスト Has Entered Foreground
+FuncText0,イベントテスト Will Terminate
+FuncText0,イベントテスト  Will Enter Background
+FuncText0,イベントテスト Failed to Reg
+FuncText0,イベントテスト Received Remote Notif
+FuncText0,イベントテスト Local Notif
+FuncText0,イベントテスト Screen Orient
+FuncText0,イベントテスト Screen Orient
+FuncText0,イベントテスト Redistered For Remote Notif
+FuncText0,イベントテスト Redistered For User Nitif
+FuncText0,イベントテスト Should Unload Resource

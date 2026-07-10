@@ -4,9 +4,9 @@
 ,
 ,
 ,
-FuncText0,无法处分员工
+FuncText0,　　不允许处分职员　　
 ,
-FuncText0,无法与员工替换
+FuncText0,　　　不允许与职员互换　　　
 ,
 ,
 ,
@@ -76,9 +76,9 @@ FuncText0,无法与员工替换
 ,
 ,
 ,
-Btn_Cmn_Text_S_Main,恢复为员工
+Btn_Cmn_Text_S_Main,登记为职员
 Btn_Cmn_Text_S_Sub,RETURN  TO  STAFF
-Btn_Cmn_Text_S_Main,恢复为员工
+Btn_Cmn_Text_S_Main,登记为职员
 Btn_Cmn_Text_S_Sub,RETURN
 ,
 Btn_Cmn_Text_S_Main,从地狱召回

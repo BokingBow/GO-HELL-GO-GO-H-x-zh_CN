@@ -7,14 +7,14 @@
 ,
 ,
 ,
-FuncText4,承受方Tec
-FuncText4,承受方增益后Tec
-FuncText4,攻击方Tec
-FuncText4,攻击方增益后Tec
-FuncText4,攻击随机特技 — 受击方随机特技
-FuncText4,特技暴击率(Y)
-FuncText4,特技碎片率(Y)
+FuncText4,食らう側Tec
+FuncText4,食らう側バフ込みTec
+FuncText4,攻撃側Tec
+FuncText4,攻撃側バフ込みTec
+FuncText4,攻撃ランダムTecー食らう側ランダムTec
+FuncText4,Tecクリティカル率(Y)
+FuncText4,Tecチップ率(Y)
 ,
-FuncText4,---特技暴击
-FuncText4,---特技碎片
-FuncText4,---无特技
+FuncText4,---Tecクリティカル
+FuncText4,---Tecチップ
+FuncText4,---Tecなし

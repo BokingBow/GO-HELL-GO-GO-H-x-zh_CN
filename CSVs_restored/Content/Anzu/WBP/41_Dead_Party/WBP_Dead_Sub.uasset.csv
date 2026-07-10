@@ -1,20 +1,20 @@
 ,
 ,
-FuncText0,独特Spine加载错误：
+FuncText0,ユニークSpine読み込みエラー：
 FuncText0,ID ＝
 FuncText0,：
 ,
-FuncText0,坠入地狱期间无法使用道具
+FuncText0,　　　　坠入地狱期间无法使用道具　　　　
 ,
-FuncText0,没有可以对亡者使用的道具
+FuncText0,　　没有可以对亡者使用的道具　　
 ,
-FuncText0,坠入地狱期间无法对话
+FuncText0,　　坠入地狱期间不允许进行对话　　
 ,
-FuncText0,今日之内坠入地狱的亡者无法处分
+FuncText0,　　　当日坠入地狱的亡者不可进行处分　　　
 ,
-FuncText0,今日之内坠入地狱的员工无法召回
+FuncText0,　　　当日坠入地狱的职员不允许召回　　　
 ,
-FuncText0,今日之内坠入地狱的亡者无法召回
+FuncText0,　　　当日坠入地狱的亡者不可召回　　　
 ,
 ,
 ,
@@ -25,7 +25,7 @@ Description_13_7CD1A9564B14DDD14E5067A75DCB1CA8,
 Name,
 ,
 ,
-Btn_Cmn_Text_S_Main,恢复为员工
+Btn_Cmn_Text_S_Main,登记为职员
 Btn_Cmn_Text_S_Sub,RETURN
 ,
 Btn_Cmn_Text_S_Main,对话

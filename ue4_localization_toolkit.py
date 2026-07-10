@@ -279,8 +279,11 @@ def cmd_restore(args):
         in_lines = read_lines(input_path)
         orig_lines = read_lines(original_path)
         min_n = min(len(in_lines), len(orig_lines))
-        if len(in_lines) != len(orig_lines):
-            print(f"  警告: 行数不一致 ({len(in_lines)} vs {len(orig_lines)})")
+        diff = len(in_lines) - len(orig_lines)
+        if diff > 0:
+            print(f"  ❌ 多{diff}行，需人工检查")
+        elif diff < 0:
+            print(f"  ⚠️ 少{-diff}行，pad可补")
 
         out = []
         for i in range(min_n):
@@ -300,7 +303,9 @@ def cmd_restore(args):
         ensure_dir(os.path.dirname(output_path))
         write_lines(output_path, [l + '\n' for l in out])
         print(f"  完成: {os.path.basename(input_path)}")
+        return diff
 
+    ok = fewer = more = 0
     for csv_path in walk_files(input_dir, '.csv'):
         rel = relpath_structure(csv_path, input_dir)
         out_path = os.path.join(output_dir, rel)
@@ -309,9 +314,15 @@ def cmd_restore(args):
             print(f"跳过 {rel}: 原始文件不存在")
             continue
         print(f"处理: {rel}")
-        fix_one(csv_path, out_path, orig_path)
+        d = fix_one(csv_path, out_path, orig_path)
+        if d > 0:
+            more += 1
+        elif d < 0:
+            fewer += 1
+        else:
+            ok += 1
 
-    print("全部完成！")
+    print(f"\n=== 汇总: 一致 {ok}  少行(可补) {fewer}  多行(需人工) {more} ===")
 
 
 # ── 5. Pad ──

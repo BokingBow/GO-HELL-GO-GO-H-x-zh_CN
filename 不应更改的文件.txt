@@ -1,2 +1,2 @@
 CSVs\Content\Anzu\DataTable\Endroll\DT_Endroll.uasset.csv
-CSVs_filtered\Content\Anzu\DataTable\Management\DT_DeadCharacterNameList.uasset.csv（我自己来）
+CSVs\Content\Anzu\DataTable\Management\DT_DeadCharacterNameList.uasset.csv（我自己来）

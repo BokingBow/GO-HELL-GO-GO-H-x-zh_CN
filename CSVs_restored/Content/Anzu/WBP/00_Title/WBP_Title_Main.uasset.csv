@@ -1,0 +1,61 @@
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Name,Image_Step1
+,
+Name,Image_step2
+Name,Image_step1
+,
+,
+Name,Image_step3
+Name,Image_step2
+Name,Image_Step1
+,
+,
+,
+Name,Image_step3
+Name,Image_Step1
+Name,Image_step2
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Start_Main,走马灯场景
+Start_Sub,SCENE VIEWER
+Start_Main,走马灯静态图
+Start_Sub,STIHL VIEWER
+Start_Main,设置
+Start_Sub,CONFIG
+Start_Main,结束游戏
+Start_Sub, EXIT   TO   GAME
+Start_Main,加载
+Start_Sub,LOAD   GAME
+Start_Main,走马灯旋律
+Start_Sub,MUSIC PLAYER
+Start_Main,从头开始
+Start_Sub,START   GAME
+Start_Main,说明书
+Start_Sub,MANUAL

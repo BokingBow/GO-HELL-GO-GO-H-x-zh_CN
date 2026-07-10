@@ -396,12 +396,12 @@ def cmd_csv2txt(args):
             reader = csv.reader(f)
             next(reader, None)  # 跳过表头
             for row in reader:
-                if len(row) >= 2:
+                if len(row) >= 2 and row[0].strip():
                     rows.append(f"{row[0]}={row[1]}")
 
         if rows:
             write_lines(txt_path, [l + '\n' for l in rows])
-            print(f"  {csv_path} → {txt_path}")
+            print(f"  {rel} → {len(rows)} 行")
 
 
 # ── 7. Import ──

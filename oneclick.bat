@@ -10,5 +10,5 @@ for /f "delims=" %%i in ('dir /b /a ".\PatchOutput"') do (
 
 python ./list.py
 
-::del "CC:\Users\Boking Bow\Game\ゴーヘルゴー業 つきおとしてゴー_ver.1.06\gohellgo\Content\Paks\ChineseTest_1_P.pak"
+del "CC:\Users\Boking Bow\Game\ゴーヘルゴー業 つきおとしてゴー_ver.1.06\gohellgo\Content\Paks\ChineseTest_1_P.pak"
 "E:\AAA\Epic Games\UE_4.27\Engine\Binaries\Win64\UnrealPak.exe" "C:\Users\Boking Bow\Game\ゴーヘルゴー業 つきおとしてゴー_ver.1.06\gohellgo\Content\Paks\ChineseTest_1_P.pak" -Create="F:\Reason\Origin\GO HELL GO GO 素材\FileList.txt" -compress

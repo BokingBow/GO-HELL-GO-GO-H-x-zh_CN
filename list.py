@@ -1,6 +1,6 @@
 import os
 
-MOD_FILES_DIR = r"F:\Reason\Origin\GO HELL GO GO 素材\Patch" # 你的文件根目录，内部应有Content文件夹
+MOD_FILES_DIR = r"F:\Reason\Origin\GO HELL GO GO 素材\PatchOutput" # 你的文件根目录，内部应有Content文件夹
 OUTPUT_TXT = r"F:\Reason\Origin\GO HELL GO GO 素材\FileList.txt"
 
 with open(OUTPUT_TXT, 'w', encoding='utf-8') as f:

@@ -1,4 +1,4 @@
-FuncText0=　不在DT_Tokuten中　
+FuncText0=は、DT_Tokutenにない
 FuncText0=还处
 FuncText0=亡者
 FuncText0=商店

@@ -381,9 +381,10 @@ def cmd_pad(args):
 # ── 6. Csv2Txt ──
 
 def cmd_csv2txt(args):
-    """将 .csv 转换回 key=value 格式 .txt。"""
+    """将 .csv 转换回 key=value 格式 .txt。空白行从原始 .txt 恢复。"""
     input_root = args.input
     output_root = args.output
+    origin_root = args.origin
     ensure_dir(output_root)
 
     for csv_path in walk_files(input_root, '.csv'):
@@ -391,13 +392,26 @@ def cmd_csv2txt(args):
         txt_path = os.path.join(output_root, rel).replace('.csv', '.txt')
         ensure_dir(os.path.dirname(txt_path))
 
+        # 读取原始 .txt（用与 txt2csv 相同的规则解析，行数才能对齐）
+        orig_pairs = []
+        if origin_root:
+            orig_txt = os.path.join(origin_root, rel).replace('.csv', '.txt')
+            if os.path.exists(orig_txt):
+                for line in read_lines(orig_txt):
+                    line = line.rstrip('\n\r')
+                    if not line.strip() or line.strip().startswith('#') or line.strip().startswith(';'):
+                        continue
+                    orig_pairs.append(line)
+
         rows = []
         with open(csv_path, 'r', encoding='utf-8-sig') as f:
             reader = csv.reader(f)
             next(reader, None)  # 跳过表头
-            for row in reader:
+            for i, row in enumerate(reader):
                 if len(row) >= 2 and row[0].strip():
                     rows.append(f"{row[0]}={row[1]}")
+                elif i < len(orig_pairs):
+                    rows.append(orig_pairs[i])
 
         if rows:
             write_lines(txt_path, [l + '\n' for l in rows])
@@ -655,9 +669,10 @@ def main():
     p.add_argument('--output', help='输出目录（默认覆盖 fixed）')
 
     # 6. csv2txt
-    p = sub.add_parser('csv2txt', help='.csv → .txt (key=value)')
+    p = sub.add_parser('csv2txt', help='.csv → .txt (key=value)，空白行从原始 .txt 恢复')
     p.add_argument('--input', required=True)
     p.add_argument('--output', required=True)
+    p.add_argument('--origin', help='原始导出 .txt 目录（用于恢复空白行）')
 
     # 7. import
     p = sub.add_parser('import', help='.txt 导入回 .uasset')

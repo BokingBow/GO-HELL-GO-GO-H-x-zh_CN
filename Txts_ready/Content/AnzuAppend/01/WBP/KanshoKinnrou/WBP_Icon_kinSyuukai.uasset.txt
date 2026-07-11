@@ -1,0 +1,13 @@
+FuncText0=亡者クリック
+Text_1=
+Text_2=D932FED141B8E13EBBD007993727D692
+Text_3=周回
+TypefaceFontName=Default
+Text_1=
+Text_2=06B7B7B444D3BEC12593679C773541DF
+Text_3=周回
+TypefaceFontName=Default
+Text_1=
+Text_2=850BD4064E8C5E9769D80ABAD6C4EBCF
+Text_3=周回
+TypefaceFontName=Default

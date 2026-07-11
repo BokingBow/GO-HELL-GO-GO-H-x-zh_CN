@@ -1,0 +1,10 @@
+Row Name=B
+Btn_Cmn_Text_S_Main=员工管理
+Btn_Cmn_Text_S_Sub=STAFF   MANAGEMENT
+Row Name=X
+Btn_Cmn_Text_S_Main=地图
+Btn_Cmn_Text_S_Sub=WORK   AREA   MAP
+Row Name=-
+Btn_Cmn_Text_S_Main=早退
+Btn_Cmn_Text_S_Sub=LEAVE   EARLY
+Row Name=0

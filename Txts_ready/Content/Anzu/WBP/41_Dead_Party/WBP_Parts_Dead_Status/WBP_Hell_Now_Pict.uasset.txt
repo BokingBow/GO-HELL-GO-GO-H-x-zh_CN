@@ -1,0 +1,13 @@
+Name=Icon_Hell_Now_pict_GR
+Name=Icon_Hell_Now_pict_Shadow
+BindingName=Icon_Hell_Now_pict_GR
+BindingName=Icon_Hell_Now_pict_Shadow
+PropertyName=RenderTransform
+PropertyPath=RenderTransform
+PropertyName=ColorAndOpacity
+PropertyPath=ColorAndOpacity
+WidgetName=Icon_Hell_Now_pict_GR
+SlotWidgetName=None
+WidgetName=Icon_Hell_Now_pict_Shadow
+SlotWidgetName=None
+DisplayLabel=Pict_GR

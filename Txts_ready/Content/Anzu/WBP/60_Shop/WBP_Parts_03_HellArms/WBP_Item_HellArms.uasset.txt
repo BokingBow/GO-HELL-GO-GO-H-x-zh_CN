@@ -1,0 +1,5 @@
+Row Name=B
+Title_M01_Text_Main=选择地狱武装
+Title_M02_Text_Main=选择地狱武装
+Title_M03_Text_Main=选择地狱武装
+Title_M_Text_Sub=HELL  ARMS  SELECT

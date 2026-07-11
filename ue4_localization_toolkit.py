@@ -421,22 +421,41 @@ def cmd_csv2txt(args):
 # ── 7. Import ──
 
 def cmd_import(args):
-    """用 UE4LocalizationsTool 将 .txt 导入回 .uasset。"""
+    """将 .txt 导入回 .uasset，输出到新目录（不修改原文件）。"""
     tool = args.tool
-    target_dir = args.dir
+    txt_dir = args.dir
+    project_dir = args.project_dir
+    output_dir = args.output
 
-    if not os.path.exists(target_dir):
-        print(f"[错误] 不存在: {target_dir}")
+    if not os.path.exists(txt_dir):
+        print(f"[错误] 不存在: {txt_dir}")
         sys.exit(1)
 
     ok = fail = 0
-    for txt_path in walk_files(target_dir, '.txt'):
-        uasset_path = txt_path.replace('.uasset.txt', '.uasset')
-        if not os.path.exists(uasset_path):
-            print(f"⚠️ 跳过 {os.path.basename(txt_path)} — 对应 .uasset 不存在")
+    for txt_path in walk_files(txt_dir, '.txt'):
+        rel = relpath_structure(txt_path, txt_dir)
+        # 对应 .uasset 路径（在项目目录中）
+        uasset_rel = rel.replace('.uasset.txt', '.uasset')
+        uasset_src = os.path.join(project_dir, uasset_rel)
+        if not os.path.exists(uasset_src):
+            print(f"⚠️ 跳过 {rel} — 对应 .uasset 不存在")
+            fail += 1
             continue
-        cmd = [tool, "import", txt_path]
-        print(f"导入: {os.path.basename(txt_path)}")
+
+        # 复制 .uasset / .uexp 和 .txt 到输出目录
+        dst_uasset = os.path.join(output_dir, uasset_rel)
+        dst_uexp = dst_uasset.replace('.uasset', '.uexp')
+        dst_txt = os.path.join(output_dir, rel)
+        ensure_dir(os.path.dirname(dst_uasset))
+        shutil.copy2(uasset_src, dst_uasset)
+        uexp_src = uasset_src.replace('.uasset', '.uexp')
+        if os.path.exists(uexp_src):
+            shutil.copy2(uexp_src, dst_uexp)
+        shutil.copy2(txt_path, dst_txt)
+
+        # 导入（工具会修改同目录下的 .uasset）
+        cmd = [tool, "import", dst_txt]
+        print(f"导入: {rel}")
         try:
             r = subprocess.run(cmd, capture_output=True, text=True, check=False)
             if r.returncode == 0:
@@ -450,6 +469,31 @@ def cmd_import(args):
             fail += 1
 
     print(f"\n完成 — 成功: {ok}  失败: {fail}")
+
+    # 清理：删 .txt
+    del_count = 0
+    for root, _, files in os.walk(output_dir):
+        for f in files:
+            if f.endswith('.txt'):
+                os.remove(os.path.join(root, f))
+                del_count += 1
+    print(f"清理: 删除 {del_count} 个 .txt 文件")
+
+    # _NEW 重命名（先收集路径再改，避免遍历冲突）
+    to_rename = []
+    for root, _, files in os.walk(output_dir):
+        for f in files:
+            if f.endswith('_NEW.uasset') or f.endswith('_NEW.uexp'):
+                to_rename.append((root, f))
+    for root, f in to_rename:
+        old = os.path.join(root, f)
+        new = os.path.join(root, f.replace('_NEW.uasset', '.uasset').replace('_NEW.uexp', '.uexp'))
+        if os.path.exists(new):
+            os.remove(new)
+        os.rename(old, new)
+    print(f"重命名: {len(to_rename)} 个 _NEW 文件")
+
+    print(f"最终输出: {output_dir}")
 
 
 # ── 8. Prepare (chou) ──
@@ -675,9 +719,11 @@ def main():
     p.add_argument('--origin', help='原始导出 .txt 目录（用于恢复空白行）')
 
     # 7. import
-    p = sub.add_parser('import', help='.txt 导入回 .uasset')
-    p.add_argument('--dir', required=True, help='含 .uasset.txt 的目录')
+    p = sub.add_parser('import', help='.txt 导入回 .uasset，输出新目录，不修改原文件')
+    p.add_argument('--dir', required=True, help='含 .uasset.txt 的目录（如 ./Txts_ready）')
     p.add_argument('--tool', required=True, help='UE4localizationsTool.exe 路径')
+    p.add_argument('--project-dir', required=True, help='原始 .uasset 项目目录（如 ./gohellgo）')
+    p.add_argument('--output', required=True, help='输出目录（仅含替换过的文件）')
 
     # 8. prepare
     p = sub.add_parser('prepare', help='复制 .txt+.uasset+.uexp 配对文件')

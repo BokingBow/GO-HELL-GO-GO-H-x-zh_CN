@@ -1,0 +1,14 @@
+FuncText0=イベントテスト Has Reactivated
+FuncText0=イベントテスト Will Deactivate
+FuncText0=Resource/Scenario
+FuncText0=イベントテスト Has Entered Foreground
+FuncText0=イベントテスト Will Terminate
+FuncText0=イベントテスト  Will Enter Background
+FuncText0=イベントテスト Failed to Reg
+FuncText0=イベントテスト Received Remote Notif
+FuncText0=イベントテスト Local Notif
+FuncText0=イベントテスト Screen Orient
+FuncText0=イベントテスト Screen Orient
+FuncText0=イベントテスト Redistered For Remote Notif
+FuncText0=イベントテスト Redistered For User Nitif
+FuncText0=イベントテスト Should Unload Resource

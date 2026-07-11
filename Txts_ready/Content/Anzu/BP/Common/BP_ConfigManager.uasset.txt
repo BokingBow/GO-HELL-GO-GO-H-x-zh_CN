@@ -1,0 +1,11 @@
+FuncText1=システム設定のデータです
+FuncText1=GoHellGoシステムデータ
+FuncText1=GoHellGoシステムデータ
+FuncText1=../../../gohellgo/Content/SaveIcons/PS4Icon/save_icon_01.png
+FuncText1=Global_Data
+FuncText1=
+FuncText1=
+FuncText1=　要返回标题画面吗？　
+FuncText1=
+FuncText1=　　要结束游戏吗？　　
+InternalVariableName=DefaultSceneRoot

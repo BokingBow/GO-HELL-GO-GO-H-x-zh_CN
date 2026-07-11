@@ -1,0 +1,14 @@
+FuncText6=Global_Data
+FuncText8=02_Arakasegi06
+FuncText8=道具引き取りマニュアル表示フラグ
+FuncText8=5話開始ADV一ノ瀬離脱
+FuncText8=還処マニュアル表示フラグ
+FuncText8=2話開始ADV
+FuncText8=無間マニュアル表示フラグ
+FuncText8=03_Kenne05
+FuncText8=亡者徘徊マニュアル表示フラグ
+FuncText8=出向予定の亡者マニュアル表示フラグ
+FuncText8=亡者出向マニュアル表示フラグ
+FuncText8=勤労特典マニュアル表示フラグ
+FuncText8=周回プレイマニュアル表示フラグ
+InternalVariableName=DefaultSceneRoot

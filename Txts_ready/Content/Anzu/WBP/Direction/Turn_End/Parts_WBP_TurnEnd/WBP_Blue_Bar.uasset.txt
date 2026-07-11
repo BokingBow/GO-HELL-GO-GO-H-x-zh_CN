@@ -1,0 +1,7 @@
+Name=Blue_Bar_par_20
+BindingName=Blue_Bar_par_20
+PropertyName=RenderTransform
+PropertyPath=RenderTransform
+WidgetName=Blue_Bar_par
+SlotWidgetName=None
+DisplayLabel=Anm_Blue_Bar

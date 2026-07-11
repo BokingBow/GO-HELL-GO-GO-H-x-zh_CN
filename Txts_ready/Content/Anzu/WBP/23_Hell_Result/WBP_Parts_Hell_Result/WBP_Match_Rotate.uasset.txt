@@ -1,0 +1,11 @@
+Name=CanvasPanelSlot_0
+Name=Mov_Match_Triangle
+BindingName=CanvasPanelSlot_0
+BindingName=Mov_Match_Triangle
+PropertyName=RenderTransform
+PropertyPath=RenderTransform
+WidgetName=Mov_Match_Triangle
+SlotWidgetName=None
+WidgetName=Mov_Match_Triangle
+SlotWidgetName=CanvasPanelSlot
+DisplayLabel=Anm_Rotate

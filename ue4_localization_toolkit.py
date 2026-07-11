@@ -420,13 +420,73 @@ def cmd_csv2txt(args):
 
 # ── 7. Import ──
 
-def cmd_import(args):
-    """将 .txt 导入回 .uasset，输出到新目录（不修改原文件）。"""
-    tool = args.tool
-    txt_dir = args.dir
-    project_dir = args.project_dir
-    output_dir = args.output
+def get_git_root(path):
+    """返回 git 仓库根目录（Windows 有效路径），或 None。"""
+    try:
+        r = subprocess.run(
+            ["git", "-C", os.path.abspath(path), "rev-parse", "--show-toplevel"],
+            capture_output=True, encoding='utf-8', check=False
+        )
+        if r.returncode == 0:
+            return os.path.normpath(r.stdout.strip())
+    except Exception:
+        pass
+    return None
 
+
+def import_one(rel, txt_dir, project_dir, output_dir, tool):
+    """导入单个 .txt 到 PatchOutput。返回 True 成功 / False 失败。"""
+    txt_path = os.path.join(txt_dir, rel)
+    uasset_rel = rel.replace('.uasset.txt', '.uasset')
+    uasset_src = os.path.join(project_dir, uasset_rel)
+    if not os.path.exists(uasset_src):
+        print(f"⚠️ 跳过 {rel} — 对应 .uasset 不存在")
+        return False
+
+    dst_uasset = os.path.join(output_dir, uasset_rel)
+    dst_uexp = dst_uasset.replace('.uasset', '.uexp')
+    dst_txt = os.path.join(output_dir, rel)
+    ensure_dir(os.path.dirname(dst_uasset))
+    shutil.copy2(uasset_src, dst_uasset)
+    uexp_src = uasset_src.replace('.uasset', '.uexp')
+    if os.path.exists(uexp_src):
+        shutil.copy2(uexp_src, dst_uexp)
+    shutil.copy2(txt_path, dst_txt)
+
+    # 导入
+    cmd = [tool, "import", dst_txt]
+    print(f"导入: {rel}")
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, check=False)
+        if r.returncode == 0:
+            print(f"  ✅ 成功")
+            success = True
+        else:
+            print(f"  ❌ {r.stderr}")
+            success = False
+    except Exception as e:
+        print(f"  ❌ {e}")
+        success = False
+
+    # 删 .txt
+    if os.path.exists(dst_txt):
+        os.remove(dst_txt)
+
+    # _NEW 重命名
+    for suffix in ['.uasset', '.uexp']:
+        new_f = dst_uasset.replace('.uasset', f'_NEW{suffix}')
+        if os.path.exists(new_f):
+            target = dst_uasset if suffix == '.uasset' else dst_uexp
+            if os.path.exists(target):
+                os.remove(target)
+            os.rename(new_f, target)
+
+    return success
+
+
+def cmd_import(args):
+    """全量导入：将所有 .txt 导入回 .uasset，输出到新目录。"""
+    txt_dir = args.dir
     if not os.path.exists(txt_dir):
         print(f"[错误] 不存在: {txt_dir}")
         sys.exit(1)
@@ -434,66 +494,98 @@ def cmd_import(args):
     ok = fail = 0
     for txt_path in walk_files(txt_dir, '.txt'):
         rel = relpath_structure(txt_path, txt_dir)
-        # 对应 .uasset 路径（在项目目录中）
-        uasset_rel = rel.replace('.uasset.txt', '.uasset')
-        uasset_src = os.path.join(project_dir, uasset_rel)
-        if not os.path.exists(uasset_src):
-            print(f"⚠️ 跳过 {rel} — 对应 .uasset 不存在")
-            fail += 1
-            continue
-
-        # 复制 .uasset / .uexp 和 .txt 到输出目录
-        dst_uasset = os.path.join(output_dir, uasset_rel)
-        dst_uexp = dst_uasset.replace('.uasset', '.uexp')
-        dst_txt = os.path.join(output_dir, rel)
-        ensure_dir(os.path.dirname(dst_uasset))
-        shutil.copy2(uasset_src, dst_uasset)
-        uexp_src = uasset_src.replace('.uasset', '.uexp')
-        if os.path.exists(uexp_src):
-            shutil.copy2(uexp_src, dst_uexp)
-        shutil.copy2(txt_path, dst_txt)
-
-        # 导入（工具会修改同目录下的 .uasset）
-        cmd = [tool, "import", dst_txt]
-        print(f"导入: {rel}")
-        try:
-            r = subprocess.run(cmd, capture_output=True, text=True, check=False)
-            if r.returncode == 0:
-                print(f"  ✅ 成功")
-                ok += 1
-            else:
-                print(f"  ❌ {r.stderr}")
-                fail += 1
-        except Exception as e:
-            print(f"  ❌ {e}")
+        imported = import_one(rel, txt_dir, args.project_dir, args.output, args.tool)
+        if imported:
+            ok += 1
+        else:
             fail += 1
 
     print(f"\n完成 — 成功: {ok}  失败: {fail}")
+    print(f"最终输出: {args.output}")
 
-    # 清理：删 .txt
-    del_count = 0
-    for root, _, files in os.walk(output_dir):
-        for f in files:
-            if f.endswith('.txt'):
-                os.remove(os.path.join(root, f))
-                del_count += 1
-    print(f"清理: 删除 {del_count} 个 .txt 文件")
 
-    # _NEW 重命名（先收集路径再改，避免遍历冲突）
-    to_rename = []
-    for root, _, files in os.walk(output_dir):
-        for f in files:
-            if f.endswith('_NEW.uasset') or f.endswith('_NEW.uexp'):
-                to_rename.append((root, f))
-    for root, f in to_rename:
-        old = os.path.join(root, f)
-        new = os.path.join(root, f.replace('_NEW.uasset', '.uasset').replace('_NEW.uexp', '.uexp'))
-        if os.path.exists(new):
-            os.remove(new)
-        os.rename(old, new)
-    print(f"重命名: {len(to_rename)} 个 _NEW 文件")
+def cmd_import_changed(args):
+    """增量导入：仅处理 git 变更的 .txt，从 PatchOutput 删除已移除的文件。"""
+    txt_dir = args.dir
+    if not os.path.exists(txt_dir):
+        print(f"[错误] 不存在: {txt_dir}")
+        sys.exit(1)
 
-    print(f"最终输出: {output_dir}")
+    repo_root = get_git_root(txt_dir)
+    if not repo_root:
+        print("[错误] 不是 git 仓库。请使用 `import` 命令全量导入，或使用 --force 跳过检测。")
+        sys.exit(1)
+    # Windows 下 git rev-parse 可能返回正斜杠路径
+    repo_root = repo_root.replace('/', os.sep)
+
+    if args.force:
+        print("--force 模式: 跳过 git 检测，全量导入")
+        ok = fail = 0
+        for txt_path in walk_files(txt_dir, '.txt'):
+            rel = relpath_structure(txt_path, txt_dir)
+            imported = import_one(rel, txt_dir, args.project_dir, args.output, args.tool)
+            if imported:
+                ok += 1
+            else:
+                fail += 1
+        print(f"\n完成 — 成功: {ok}  失败: {fail}")
+        return
+
+    txt_abs = os.path.abspath(txt_dir)
+    txt_rel = os.path.relpath(txt_abs, repo_root).replace('\\', '/')
+    if not txt_rel.endswith('/'):
+        txt_rel += '/'
+
+    since = args.since
+
+    def git_out(cmd):
+        """运行 git 命令，返回 stdout（utf-8 解码）。"""
+        r = subprocess.run(cmd, capture_output=True, encoding='utf-8', cwd=repo_root, check=False)
+        return r
+
+    # 检查 Txts_ready 是否被 git 跟踪
+    r_check = git_out(["git", "ls-files", txt_rel])
+    tracked = bool(r_check.stdout.strip())
+    if not tracked and not args.force:
+        print(f"[警告] git 中没有跟踪 {txt_rel} 中的文件。运行 `git add Txts_ready` 后提交可修复。")
+
+    # 新增/修改
+    r_am = git_out(["git", "diff", "--name-only", "--diff-filter=AM", since, "--", txt_rel])
+    if r_am.returncode != 0:
+        print(f"[错误] git diff 失败: {r_am.stderr}")
+        sys.exit(1)
+    changed = [l.strip() for l in r_am.stdout.splitlines() if l.strip().endswith('.txt')]
+
+    # 删除
+    r_d = git_out(["git", "diff", "--name-only", "--diff-filter=D", since, "--", txt_rel])
+    deleted = [l.strip() for l in r_d.stdout.splitlines() if l.strip().endswith('.txt')]
+
+    if not changed and not deleted:
+        print("无变更，跳过")
+        return
+
+    # 从 PatchOutput 删除对应 .uasset/.uexp
+    for rel in deleted:
+        uasset_rel = rel.replace('.uasset.txt', '.uasset')
+        for ext in ['.uasset', '.uexp']:
+            p = os.path.join(args.output, uasset_rel.replace('.uasset', ext))
+            if os.path.exists(p):
+                os.remove(p)
+                print(f"🗑️ 删除: {rel} ({ext})")
+
+    # 新增/修改
+    ok = fail = 0
+    for rel in changed:
+        imported = import_one(rel, txt_dir, args.project_dir, args.output, args.tool)
+        if imported:
+            ok += 1
+        else:
+            fail += 1
+
+    summary = f"\n完成 — 成功: {ok}  失败: {fail}"
+    if deleted:
+        summary += f"  从 PatchOutput 移除: {len(deleted)} 个文件"
+    print(summary)
 
 
 # ── 8. Prepare (chou) ──
@@ -725,6 +817,15 @@ def main():
     p.add_argument('--project-dir', required=True, help='原始 .uasset 项目目录（如 ./gohellgo）')
     p.add_argument('--output', required=True, help='输出目录（仅含替换过的文件）')
 
+    # 7b. import-changed
+    p = sub.add_parser('import-changed', help='增量导入：仅处理 git 变更的 .txt，删除已移除文件')
+    p.add_argument('--dir', required=True, help='含 .uasset.txt 的目录（如 ./Txts_ready）')
+    p.add_argument('--tool', required=True, help='UE4localizationsTool.exe 路径')
+    p.add_argument('--project-dir', required=True, help='原始 .uasset 项目目录（如 ./gohellgo）')
+    p.add_argument('--output', required=True, help='PatchOutput 持久化目录')
+    p.add_argument('--since', default='HEAD', help='git diff 对比基线（默认 HEAD，对比工作区）')
+    p.add_argument('--force', action='store_true', help='跳过 git 检测，全量导入')
+
     # 8. prepare
     p = sub.add_parser('prepare', help='复制 .txt+.uasset+.uexp 配对文件')
     p.add_argument('--txt-dir', required=True, help='翻译后 .txt 目录')
@@ -766,6 +867,7 @@ def main():
         'pad': cmd_pad,
         'csv2txt': cmd_csv2txt,
         'import': cmd_import,
+        'import-changed': cmd_import_changed,
         'prepare': cmd_prepare,
         'clean-txt': cmd_clean_txt,
         'rename-new': cmd_rename_new,

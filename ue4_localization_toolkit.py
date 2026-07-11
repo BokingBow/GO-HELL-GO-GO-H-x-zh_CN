@@ -556,6 +556,14 @@ def cmd_import_changed(args):
         sys.exit(1)
     changed = [l.strip() for l in r_am.stdout.splitlines() if l.strip().endswith('.txt')]
 
+    # 未跟踪的新文件
+    r_others = git_out(["git", "ls-files", "--others", "--exclude-standard", txt_rel])
+    if r_others.returncode == 0:
+        new_files = [l.strip() for l in r_others.stdout.splitlines() if l.strip().endswith(".txt")]
+        if new_files:
+            print(f"发现 {len(new_files)} 个未跟踪的新文件，一并导入")
+            changed.extend(new_files)
+
     # 删除
     r_d = git_out(["git", "diff", "--name-only", "--diff-filter=D", since, "--", txt_rel])
     deleted = [l.strip() for l in r_d.stdout.splitlines() if l.strip().endswith('.txt')]
@@ -566,7 +574,8 @@ def cmd_import_changed(args):
 
     # 从 PatchOutput 删除对应 .uasset/.uexp
     for rel in deleted:
-        uasset_rel = rel.replace('.uasset.txt', '.uasset')
+        rel_stripped = rel[len(txt_rel):] if rel.startswith(txt_rel) else rel
+        uasset_rel = rel_stripped.replace('.uasset.txt', '.uasset')
         for ext in ['.uasset', '.uexp']:
             p = os.path.join(args.output, uasset_rel.replace('.uasset', ext))
             if os.path.exists(p):
@@ -576,7 +585,8 @@ def cmd_import_changed(args):
     # 新增/修改
     ok = fail = 0
     for rel in changed:
-        imported = import_one(rel, txt_dir, args.project_dir, args.output, args.tool)
+        rel_stripped = rel[len(txt_rel):] if rel.startswith(txt_rel) else rel
+        imported = import_one(rel_stripped, txt_dir, args.project_dir, args.output, args.tool)
         if imported:
             ok += 1
         else:

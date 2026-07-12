@@ -1,0 +1,4 @@
+Text_1=
+Text_2=627AD7464E1C2FE4C106988E46AAE2E2
+Text_3=ヘルパッシブ
+TypefaceFontName=Default

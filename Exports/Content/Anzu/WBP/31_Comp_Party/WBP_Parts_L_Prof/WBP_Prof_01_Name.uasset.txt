@@ -1,0 +1,8 @@
+Text_1=
+Text_2=79590A2E4D0A5F486A917DB824B31EEB
+Text_3=イアイドー
+TypefaceFontName=Default
+Text_1=
+Text_2=5905077041055805647B219164ADC631
+Text_3=豪放磊落な会社社長。<cf>日々をいかに楽しむかを考えている。<cf>もしくはそれすら考えていない。
+TypefaceFontName=Default

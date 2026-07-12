@@ -1,0 +1,3 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=Niagara
+InternalVariableName=SpineBoneFollower

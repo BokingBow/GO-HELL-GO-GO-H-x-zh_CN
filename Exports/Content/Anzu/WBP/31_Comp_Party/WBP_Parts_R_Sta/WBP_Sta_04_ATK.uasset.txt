@@ -1,0 +1,8 @@
+Text_1=
+Text_2=EC9D9B7546E53FE5134ED48EDA7411D2
+Text_3=ATK
+TypefaceFontName=Default
+Text_1=
+Text_2=BF2C14DE4ED8787E61679993B7F9AEF3
+Text_3=88888
+TypefaceFontName=Default

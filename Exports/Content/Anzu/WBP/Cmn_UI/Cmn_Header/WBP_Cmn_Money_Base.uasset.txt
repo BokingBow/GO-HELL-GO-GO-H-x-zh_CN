@@ -1,0 +1,9 @@
+Text_1=
+Text_2=475B8CE1437BE1CB52C83DB6897207BB
+Text_3=84,000
+TypefaceFontName=Default
+Text_1=
+Text_2=437398CD4BF432E15EC439828C6C88F2
+Text_3=￥
+TypefaceFontName=Default
+DisplayLabel=Animation

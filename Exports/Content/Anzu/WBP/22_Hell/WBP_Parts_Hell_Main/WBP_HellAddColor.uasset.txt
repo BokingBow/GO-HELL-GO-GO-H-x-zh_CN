@@ -1,0 +1,4 @@
+Text_1=
+Text_2=CB175CB74DD89540F2958393AE84DAD0
+Text_3=ちっちゃ
+TypefaceFontName=Default

@@ -1,0 +1,14 @@
+Name=CanvasPanel_0
+BindingName=CanvasPanel_0
+Name=CanvasPanel_0
+BindingName=CanvasPanel_0
+PropertyName=RenderOpacity
+PropertyPath=RenderOpacity
+PropertyName=RenderOpacity
+PropertyPath=RenderOpacity
+WidgetName=CanvasPanel
+SlotWidgetName=None
+DisplayLabel=FadeOut
+WidgetName=CanvasPanel
+SlotWidgetName=None
+DisplayLabel=ResetAnim

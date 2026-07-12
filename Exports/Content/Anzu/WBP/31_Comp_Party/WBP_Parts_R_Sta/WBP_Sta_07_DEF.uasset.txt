@@ -1,0 +1,8 @@
+Text_1=
+Text_2=8DEB55A64F172B153589618612D5B481
+Text_3=DEF
+TypefaceFontName=Default
+Text_1=
+Text_2=4F3ED48C4B13EB5781E1B69F9EC757C8
+Text_3=88888
+TypefaceFontName=Default

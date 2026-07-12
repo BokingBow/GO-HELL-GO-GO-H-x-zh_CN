@@ -1,0 +1,4 @@
+Text_1=
+Text_2=EB9816A64A410A770BD863939D7A98EF
+Text_3=THUNDER
+TypefaceFontName=Default

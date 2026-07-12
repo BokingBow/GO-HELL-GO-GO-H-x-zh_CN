@@ -1,0 +1,11 @@
+FuncText14=/
+FuncText14=/
+FuncText14=
+Text_1=
+Text_2=1EEE22D841B31C9ECE7D33874154D636
+Text_3=イアイドー
+TypefaceFontName=Default
+Text_1=
+Text_2=B53D04B64C1DD14D31E926AD67A5C634
+Text_3=ヤツシロ、お前本気でウゼェ。<cf>他社がどーたらなんて、全員オシャカにしてそのへんの会計に馴染<cf>ませちまえば問題ねーんだよ
+TypefaceFontName=Default

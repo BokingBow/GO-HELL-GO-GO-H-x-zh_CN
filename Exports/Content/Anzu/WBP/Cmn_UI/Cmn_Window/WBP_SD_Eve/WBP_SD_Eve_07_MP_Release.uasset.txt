@@ -1,0 +1,16 @@
+Text_1=
+Text_2=F4612CA64BB3D4227B0184ADFF0385F4
+Text_3=400
+TypefaceFontName=Default
+Text_1=
+Text_2=09C58BA34241A3098FDC0389101D26FC
+Text_3=MP
+TypefaceFontName=Default
+Text_1=
+Text_2=2C2E91D34C6C44ED9FF638AF765420E4
+Text_3=MP
+TypefaceFontName=Default
+Text_1=
+Text_2=7F2263014B9BBD0C25153FBBA33A1CD9
+Text_3=500
+TypefaceFontName=Default

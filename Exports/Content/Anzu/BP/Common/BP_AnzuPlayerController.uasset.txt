@@ -1,0 +1,2 @@
+FuncText3=MouseMove
+InternalVariableName=DefaultSceneRoot

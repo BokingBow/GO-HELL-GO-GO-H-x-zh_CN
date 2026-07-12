@@ -1,0 +1,8 @@
+Text_1=
+Text_2=74A45B834F899810CA1D979978207509
+Text_3=e
+TypefaceFontName=Default
+Text_1=
+Text_2=D1D0E11746C22580A2D72A80F9CE149A
+Text_3=8,888
+TypefaceFontName=Default

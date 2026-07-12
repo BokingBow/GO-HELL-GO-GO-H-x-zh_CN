@@ -1,0 +1,71 @@
+﻿Key,Value
+NamedSlots,PopupSlot_Single
+NamedSlots,PopupSlot_Scroll
+Name,Base_BK_Boya
+Name,M_Title
+Name,Foot_Deco
+Name,Base_Bar_Down
+Name,WidgetSwitcher_346
+Name,Btn_M_GRP
+Name,Anm_Blue
+BindingName,Base_BK_Boya
+BindingName,WBP_Cmn_Window_M_Title
+BindingName,Foot_Deco
+BindingName,Base_Window_Bar_sita
+BindingName,WidgetSwitcher_346
+BindingName,Btn_M_GRP
+BindingName,Anm_Blue
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+Text_1,
+Text_2,1E259B3A400D99DDCB1691AF845490A2
+Text_3,汎用ポップアップテキスト3行までカバー
+Text_1,
+Text_2,DDA9D233497697D83A8115948B8CC5F5
+Text_3,汎用ポップアップテキスト3行までカバー<cf>汎用ポップアップテキスト3行までカバー<cf>汎用ポップアップテキスト3行までカバー
+TypefaceFontName,Default
+Btn_Cmn_Text_M,キャンセル
+Btn_Cmn_Tex_M_Sub,REJECT CONSIDERATION
+Btn_Cmn_Text_M,決　定
+Btn_Cmn_Tex_M_OK_Sub,DECISION CONSIDERATION
+In Text_1,
+In Text_2,A287B52744B362C47BB669851473CBD7
+In Text_3,Cancel
+In Text_1,
+In Text_2,B02D4A4A4C582BB51C3368AD113437C5
+In Text_3,OK
+In Text_1,
+In Text_2,FCA469DC44860E21C19098B2F13CCED2
+In Text_3,OK
+Text_M01_GR,業務終了
+Text_M02_BL,業務終了
+Text_M03_RD,業務終了
+WidgetName,Base_BK_Boya
+SlotWidgetName,None
+WidgetName,WBP_Cmn_Window_M_Title
+SlotWidgetName,None
+WidgetName,Foot_Deco
+SlotWidgetName,None
+WidgetName,Base_Bar_Down
+SlotWidgetName,None
+WidgetName,WidgetSwitcher
+SlotWidgetName,None
+WidgetName,Btn_M_GRP
+SlotWidgetName,None
+WidgetName,Anm_Blue
+SlotWidgetName,None
+DisplayLabel,Anm_In

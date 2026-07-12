@@ -1,0 +1,4 @@
+Text_1=
+Text_2=D5B26B0347D2EFECFB7E80955CE33CEC
+Text_3=ご利益
+TypefaceFontName=Default

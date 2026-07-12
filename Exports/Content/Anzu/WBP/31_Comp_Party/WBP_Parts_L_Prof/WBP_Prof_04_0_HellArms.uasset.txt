@@ -1,0 +1,4 @@
+Text_1=
+Text_2=8CE2F30D4BA375EECFA312B8E0705B91
+Text_3=ヘルアームズ
+TypefaceFontName=Default

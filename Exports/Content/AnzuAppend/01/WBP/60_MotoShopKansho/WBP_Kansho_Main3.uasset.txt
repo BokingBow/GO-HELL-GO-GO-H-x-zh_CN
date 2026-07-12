@@ -1,0 +1,14 @@
+FuncText0=下
+FuncText0=上
+FuncText0=左
+FuncText0=右
+FuncText0=ShopBPresses
+FuncText0=ShopAPressesed
+FuncText25=PS4
+FuncText25=Switch
+FuncText29=Joy_A
+FuncText29=Think_A
+FuncText29=Normal_A
+FuncText29=Shy_A
+FuncText29=Anger_A
+FuncText29=Surprise_A

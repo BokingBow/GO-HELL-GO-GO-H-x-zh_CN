@@ -1,0 +1,3 @@
+FuncText0=InitCharaActor
+SCSVariableName=Widget
+InternalVariableName=DefaultSceneRoot

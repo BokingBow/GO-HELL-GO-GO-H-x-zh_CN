@@ -1,0 +1,4 @@
+Text_1=
+Text_2=C596FE1A4FB017DD0E8433A75836024D
+Text_3=POISON
+TypefaceFontName=Default

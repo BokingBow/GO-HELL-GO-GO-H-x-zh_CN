@@ -1,0 +1,4 @@
+Text_1=
+Text_2=12236D554DD2837E2CEE08ADC4C60735
+Text_3=イアイドー
+TypefaceFontName=Default

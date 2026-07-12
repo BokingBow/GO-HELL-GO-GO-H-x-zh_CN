@@ -1,0 +1,5 @@
+FuncText8=￥
+Text_1=
+Text_2=4CF72ADE49282F69A2EE13982438AC48
+Text_3=￥99999
+TypefaceFontName=Default

@@ -1,0 +1,3 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=Widget
+InternalVariableName=ProceduralMesh

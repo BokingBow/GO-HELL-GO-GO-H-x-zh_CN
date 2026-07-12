@@ -1,0 +1,10 @@
+ComponentPropertyName=OK
+DelegatePropertyName=OnHovered
+FunctionNameToBind=BndEvt__WBP_Btn_Cmn_M_Ok_OK_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature
+ComponentPropertyName=OK
+DelegatePropertyName=OnClicked
+FunctionNameToBind=BndEvt__WBP_Btn_Cmn_M_Ok_OK_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+Text=決　定
+TypefaceFontName=Default
+Text=DECISION      CONSIDERATION
+TypefaceFontName=Default

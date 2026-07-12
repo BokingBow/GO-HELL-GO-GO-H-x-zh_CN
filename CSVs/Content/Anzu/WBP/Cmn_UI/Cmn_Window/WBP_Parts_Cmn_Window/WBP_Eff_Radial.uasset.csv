@@ -1,0 +1,8 @@
+﻿Key,Value
+Name,Eff_Radial_Item_Get
+BindingName,Eff_Radial_Item_Get
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+WidgetName,Eff_Radial_Item_Get
+SlotWidgetName,None
+DisplayLabel,Anm_Radial

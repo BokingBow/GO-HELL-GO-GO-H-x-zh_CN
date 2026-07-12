@@ -1,0 +1,14 @@
+Tags=ManagementIcon
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=Widget
+InternalVariableName=TextRender
+InternalVariableName=Sphere
+CollisionProfileName=Custom
+Channel=WorldStatic
+Channel=WorldDynamic
+Channel=Pawn
+Channel=Visibility
+Channel=Camera
+Channel=PhysicsBody
+Channel=Vehicle
+Channel=Destructible

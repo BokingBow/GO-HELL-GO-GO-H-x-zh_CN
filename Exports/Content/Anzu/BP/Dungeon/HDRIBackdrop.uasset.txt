@@ -1,0 +1,7 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=Geometry
+InternalVariableName=SceneComponent
+InternalVariableName=Skylight
+CollisionProfileName=NoCollision
+Channel=Visibility
+Channel=Camera

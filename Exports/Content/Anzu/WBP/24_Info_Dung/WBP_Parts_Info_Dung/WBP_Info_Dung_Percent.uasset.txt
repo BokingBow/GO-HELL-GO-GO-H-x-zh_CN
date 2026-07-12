@@ -1,0 +1,12 @@
+Text_1=
+Text_2=EA1C15D04C01FBAF8ED434A9BBEC84C1
+Text_3=到達率
+TypefaceFontName=Default
+Text_1=
+Text_2=6BDDC35641EF28EEB47EB18780557862
+Text_3=75
+TypefaceFontName=Default
+Text_1=
+Text_2=4E6CC8D34E85020D691C5D880E542140
+Text_3=％
+TypefaceFontName=Default

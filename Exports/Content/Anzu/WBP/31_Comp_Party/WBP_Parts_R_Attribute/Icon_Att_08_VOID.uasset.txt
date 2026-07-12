@@ -1,0 +1,4 @@
+Text_1=
+Text_2=1397AF2C429183B5D70F12A6BD88B5C4
+Text_3=VOID
+TypefaceFontName=Default

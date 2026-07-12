@@ -1,0 +1,5 @@
+Animation Name=Special
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=SpineSkeletonRenderer
+InternalVariableName=Scene
+InternalVariableName=SpineSkeletonAnimation

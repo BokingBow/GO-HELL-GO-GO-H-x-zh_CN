@@ -1,0 +1,6 @@
+FuncText39=
+FuncText39=
+FuncText49=鉄壁のガード
+FuncText49=
+FuncText49=亡者枠がいっぱいです
+InternalVariableName=DefaultSceneRoot

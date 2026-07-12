@@ -1,0 +1,4 @@
+﻿Key,Value
+ComponentPropertyName,CheckBox
+DelegatePropertyName,OnCheckStateChanged
+FunctionNameToBind,BndEvt__W_Btn_ADV_S_Check_CheckBox_115_K2Node_ComponentBoundEvent_0_OnCheckBoxComponentStateChanged__DelegateSignature

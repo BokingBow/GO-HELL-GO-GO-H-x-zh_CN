@@ -1,0 +1,2 @@
+Name=Texture
+TextureName=DefaultTexture

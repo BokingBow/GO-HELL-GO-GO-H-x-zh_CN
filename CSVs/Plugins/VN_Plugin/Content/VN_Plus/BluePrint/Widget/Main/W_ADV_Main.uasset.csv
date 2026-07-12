@@ -1,0 +1,48 @@
+﻿Key,Value
+FuncText7,Invisible
+FuncText7,UIButtonTextHide
+FuncText7,UIButtonVoicePlay
+FuncText7,UIButtonBackLog
+FuncText7,UIButtonSkip
+FuncText7,UIButtonAuto
+FuncText7,UIButtonADVMenue
+FuncText7,Visible
+FuncText7,Visible
+FuncText7,
+FuncText7,/
+FuncText7,/
+FuncText7,Invisible
+FuncText7,/
+FuncText7,Visible
+FuncText7,/
+FuncText7,
+FuncText7,Visible
+FuncText7,Visible
+FuncText7,Invisible
+FuncText7,WindowON
+FuncText7,WindowOFF
+FuncText74,
+FuncText77,-
+FuncText77,-
+FuncText78,
+FuncText79,Create Text Window CreateData:
+FuncText79,Create Text Window Add Child Return:
+ComponentPropertyName,Fade_Widget
+DelegatePropertyName,End_Fade
+FunctionNameToBind,BndEvt__W_ADV_Main_Fade_Widget_K2Node_ComponentBoundEvent_1_End_Fade__DelegateSignature
+Name,Eff_ADV_Face_boya
+BindingName,Eff_ADV_Face_boya
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,ColorAndOpacity
+PropertyPath,ColorAndOpacity
+TypefaceFontName,Default
+Row Name,Y
+Row Name,ZR
+Row Name,B
+Row Name,R
+Row Name,X
+Row Name,0
+WidgetName,Eff_ADV_Face_boya
+SlotWidgetName,None
+DisplayLabel,Fire

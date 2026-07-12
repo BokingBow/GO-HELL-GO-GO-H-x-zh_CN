@@ -1,0 +1,2 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=RootComponent0

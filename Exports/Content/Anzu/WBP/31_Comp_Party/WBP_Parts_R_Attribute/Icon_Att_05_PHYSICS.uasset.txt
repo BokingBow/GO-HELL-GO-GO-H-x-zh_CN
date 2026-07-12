@@ -1,0 +1,4 @@
+Text_1=
+Text_2=19B173FF49D58DF3E046AB9CF6387C6B
+Text_3=PHYSICS
+TypefaceFontName=Default

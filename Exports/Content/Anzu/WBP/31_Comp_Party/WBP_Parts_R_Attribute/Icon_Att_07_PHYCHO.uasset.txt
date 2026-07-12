@@ -1,0 +1,4 @@
+Text_1=
+Text_2=0D862F1B4FCEF54A399845A9B63C534B
+Text_3=PHYCHO
+TypefaceFontName=Default

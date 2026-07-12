@@ -1,0 +1,13 @@
+FuncText0=販売クリック
+Text_1=
+Text_2=428A62D348BFE0EFA841CAA7C61CA067
+Text_3=販売
+TypefaceFontName=Default
+Text_1=
+Text_2=F9712A264FE810DE2545CD8472E0B2E7
+Text_3=販売
+TypefaceFontName=Default
+Text_1=
+Text_2=86F924DA4E2F36D26985D99EB4B9DEAA
+Text_3=販売
+TypefaceFontName=Default

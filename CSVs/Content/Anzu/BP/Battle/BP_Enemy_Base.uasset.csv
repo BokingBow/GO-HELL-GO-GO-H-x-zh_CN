@@ -1,0 +1,5 @@
+﻿Key,Value
+Idle,Idle_Combat
+SCSVariableName,SpineSkeletonRenderer
+SCSVariableName,Widget_HUD
+InternalVariableName,DefaultSceneRoot

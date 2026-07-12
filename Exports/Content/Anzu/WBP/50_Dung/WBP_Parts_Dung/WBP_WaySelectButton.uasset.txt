@@ -1,0 +1,3 @@
+ComponentPropertyName=Button
+DelegatePropertyName=OnClicked
+FunctionNameToBind=BndEvt__WBP_WaySelectButton_Button_123_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature

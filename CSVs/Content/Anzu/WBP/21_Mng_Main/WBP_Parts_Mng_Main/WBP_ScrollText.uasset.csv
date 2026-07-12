@@ -1,0 +1,31 @@
+﻿Key,Value
+Name,CanvasPanelSlot_3
+Name,TextBlock
+BindingName,CanvasPanelSlot_3
+BindingName,TextBlock
+Name,CanvasPanelSlot_4
+Name,TextBlock_0
+BindingName,CanvasPanelSlot_4
+BindingName,TextBlock_0
+PropertyName,Offsets
+PropertyPath,LayoutData.Offsets
+PropertyName,Offsets
+PropertyPath,LayoutData.Offsets
+Text_1,UMG
+Text_2,TextBlockDefaultValue
+Text_3,Text Block
+TypefaceFontName,Default
+Text_1,UMG
+Text_2,TextBlockDefaultValue
+Text_3,Text Block
+TypefaceFontName,Default
+WidgetName,TextBlock
+SlotWidgetName,None
+WidgetName,TextBlock
+SlotWidgetName,CanvasPanelSlot
+DisplayLabel,NewAnimation_1
+WidgetName,TextBlock
+SlotWidgetName,None
+WidgetName,TextBlock
+SlotWidgetName,CanvasPanelSlot
+DisplayLabel,NewAnimation

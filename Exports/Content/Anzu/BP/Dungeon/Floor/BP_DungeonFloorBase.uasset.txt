@@ -1,0 +1,4 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=Widget
+InternalVariableName=Scene
+InternalVariableName=TextRender

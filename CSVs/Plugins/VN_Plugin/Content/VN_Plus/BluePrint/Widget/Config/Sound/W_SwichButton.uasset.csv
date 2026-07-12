@@ -1,0 +1,15 @@
+﻿Key,Value
+ObjectName,TextBlock_107
+PropertyName,Text
+FunctionName,LeftButton
+Name,LeftButton
+ObjectName,TextBlock_205
+PropertyName,Text
+FunctionName,RightButon
+Name,RightButon
+ComponentPropertyName,Off
+DelegatePropertyName,OnClicked
+FunctionNameToBind,BndEvt__W_SwichButton_Off_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
+ComponentPropertyName,On
+DelegatePropertyName,OnClicked
+FunctionNameToBind,BndEvt__W_SwichButton_On_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature

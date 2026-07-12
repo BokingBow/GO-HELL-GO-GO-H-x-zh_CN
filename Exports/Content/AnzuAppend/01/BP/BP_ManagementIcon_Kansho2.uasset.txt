@@ -1,0 +1,2 @@
+SCSVariableName=Widget
+InternalVariableName=DefaultSceneRoot

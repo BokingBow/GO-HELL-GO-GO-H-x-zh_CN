@@ -1,0 +1,12 @@
+﻿Key,Value
+Name,Buff_DeBuff
+BindingName,Buff_DeBuff
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+Text_1,
+Text_2,6051EF714CC65563E26BB7AC6C989490
+Text_3,11
+TypefaceFontName,Default
+WidgetName,Buff_DeBuff
+SlotWidgetName,None
+DisplayLabel,Anm_Blink

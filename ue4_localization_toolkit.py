@@ -598,9 +598,9 @@ def cmd_import_changed(args):
 
     for rel in changed:
         rel_stripped = rel[len(txt_rel):] if rel.startswith(txt_rel) else rel
-        # 检查是否在手动维护清单中
-        if rel in manual_skip:
-            print(f"⏭️ 跳过 {rel} — 位于手动维护清单")
+        # 检查是否在手动维护清单中（清单路径不含 Txts_ready/ 前缀）
+        if rel_stripped in manual_skip or rel in manual_skip:
+            print(f"⏭️ 跳过 {rel_stripped} — 位于手动维护清单")
             skip += 1
             continue
         imported = import_one(rel_stripped, txt_dir, args.project_dir, args.output, args.tool)

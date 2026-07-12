@@ -1,0 +1,14 @@
+FuncText0=
+Name=CanvasPanelSlot_1
+Name=Image_0
+BindingName=CanvasPanelSlot_1
+BindingName=Image_0
+PropertyName=RenderOpacity
+PropertyPath=RenderOpacity
+PropertyName=Offsets
+PropertyPath=LayoutData.Offsets
+WidgetName=Image
+SlotWidgetName=None
+WidgetName=Image
+SlotWidgetName=CanvasPanelSlot
+DisplayLabel=NewAnimation

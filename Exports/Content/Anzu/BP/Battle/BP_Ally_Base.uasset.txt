@@ -1,0 +1,16 @@
+Channel=WorldStatic
+Channel=WorldDynamic
+Channel=Pawn
+Channel=PhysicsBody
+Channel=Destructible
+Channel=Vehicle
+SCSVariableName=Capsule
+SCSVariableName=Widget_HUD
+InternalVariableName=DefaultSceneRoot
+ParentComponentOrVariableName=SpineSkeletonRenderer
+ParentComponentOwnerClassName=BP_CharacterBase_C
+InternalVariableName=Camera
+ParentComponentOrVariableName=Scene
+ParentComponentOwnerClassName=BP_CharacterBase_C
+InternalVariableName=Widget_SkillSelect
+SharedLayerName=WidgetComponentScreenLayer1

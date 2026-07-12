@@ -1,0 +1,4 @@
+Text_1=
+Text_2=47A9148C4D8E113AAD32AF88D658DF8E
+Text_3=属性
+TypefaceFontName=Default

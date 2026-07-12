@@ -1,0 +1,13 @@
+TypefaceFontName=None
+Text_1=
+Text_2=D1C37C4A4865C3BE599D028124FDC663
+Text_3=清掃中断
+TypefaceFontName=None
+Text_1=
+Text_2=015C668E418DD167DE1386B3DFA4580F
+Text_3=清掃中断
+TypefaceFontName=None
+Text_1=
+Text_2=F9D2A56B4BB69D3E8C94D2BA28666E1C
+Text_3=清掃中断
+TypefaceFontName=None

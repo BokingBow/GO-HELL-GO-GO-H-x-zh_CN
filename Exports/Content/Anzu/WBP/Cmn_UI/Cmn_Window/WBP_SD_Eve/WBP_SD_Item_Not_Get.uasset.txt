@@ -1,0 +1,4 @@
+Text_1=
+Text_2=1A23EEFD497ADB985F1645A80FB4EAF5
+Text_3=なし
+TypefaceFontName=Default

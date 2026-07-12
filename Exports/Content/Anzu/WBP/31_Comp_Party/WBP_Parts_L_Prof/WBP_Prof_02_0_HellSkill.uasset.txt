@@ -1,0 +1,4 @@
+Text_1=
+Text_2=97C960084F894BDCD75EB0969E43DFF4
+Text_3=ヘルスキル
+TypefaceFontName=Default

@@ -1,0 +1,12 @@
+Text_1=
+Text_2=44F720114DF8B747260A229854B9654C
+Text_3=CON
+TypefaceFontName=Default
+Text_1=
+Text_2=AC92631048FF669E23799DA38483081C
+Text_3=MNT
+TypefaceFontName=Default
+Text_1=
+Text_2=CA2AF5514CD93D1B7FFA9DA379CD0660
+Text_3=LKS
+TypefaceFontName=Default

@@ -1,0 +1,14 @@
+﻿Key,Value
+Name,Circle
+Name,Pos_Circle
+BindingName,Circle
+BindingName,Pos_Circle
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+WidgetName,Circle
+SlotWidgetName,None
+WidgetName,Pos_Circle
+SlotWidgetName,None
+DisplayLabel,Anm_Circle

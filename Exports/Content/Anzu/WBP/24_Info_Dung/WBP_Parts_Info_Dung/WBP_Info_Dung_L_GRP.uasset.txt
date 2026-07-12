@@ -1,0 +1,4 @@
+Text_1=
+Text_2=6068E65546FD5B4E520A88AEF2452432
+Text_3=ごく普通の上層階の地獄ここに入るものは<cf>二度と地上には帰れないと言われている
+TypefaceFontName=Default

@@ -1,0 +1,5 @@
+FuncText0= IsDisabled
+FuncText0=Activated
+FuncText0= IsAdded
+FuncText0= IsRemoved
+FuncText0=ClearWBPList

@@ -1,0 +1,8 @@
+﻿Key,Value
+Name,Image_64
+BindingName,Image_64
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+WidgetName,Image
+SlotWidgetName,None
+DisplayLabel,CursolAnim

@@ -1,0 +1,13 @@
+FuncText0=亡者クリック
+Text_1=
+Text_2=FA6644A54BACDBC59CB6E7A3835D5375
+Text_3=亡者
+TypefaceFontName=Default
+Text_1=
+Text_2=066D206446DFE4AFFBFF01B1E54D7D94
+Text_3=亡者
+TypefaceFontName=Default
+Text_1=
+Text_2=5B7630C44CA8D2B9C2230FBC0703A0A8
+Text_3=亡者
+TypefaceFontName=Default

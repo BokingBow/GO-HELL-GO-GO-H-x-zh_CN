@@ -1,0 +1,4 @@
+InternalVariableName=DefaultSceneRoot
+InternalVariableName=SpineSkeletonAnimation
+InternalVariableName=SpineSkeletonRenderer
+PreviewAnimation=Idle

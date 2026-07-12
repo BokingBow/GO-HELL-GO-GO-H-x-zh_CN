@@ -1,0 +1,10 @@
+ComponentPropertyName=Re
+DelegatePropertyName=OnHovered
+FunctionNameToBind=BndEvt__WBP_Btn_Cmn_M_Return_Re_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature
+ComponentPropertyName=Re
+DelegatePropertyName=OnClicked
+FunctionNameToBind=BndEvt__WBP_Btn_Cmn_M_Return_Re_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+Text=リトライ
+TypefaceFontName=Default
+Text=RETURN   TO   BATTLE
+TypefaceFontName=Default

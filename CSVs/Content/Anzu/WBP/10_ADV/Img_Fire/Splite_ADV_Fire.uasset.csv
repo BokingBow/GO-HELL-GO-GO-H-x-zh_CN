@@ -1,0 +1,11 @@
+﻿Key,Value
+FuncText0,
+Name,Eff_ADV_Fire
+BindingName,Eff_ADV_Fire
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,ColorAndOpacity
+PropertyPath,ColorAndOpacity
+WidgetName,Eff_ADV_Fire
+SlotWidgetName,None
+DisplayLabel,Anim_Fire_Blink

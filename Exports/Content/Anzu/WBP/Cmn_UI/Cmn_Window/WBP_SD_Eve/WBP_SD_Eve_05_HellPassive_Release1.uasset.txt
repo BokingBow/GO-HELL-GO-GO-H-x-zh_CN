@@ -1,0 +1,8 @@
+Text_1=
+Text_2=176FF47449E8441F78B1E7B786686299
+Text_3=戦闘後に自分と一緒に前衛にいる<cf>メンバーのフィーリング+40
+TypefaceFontName=Default
+Text_1=
+Text_2=1E5AC50E4865AB7E6BE8E1BE8F897B0B
+Text_3=フィーリング
+TypefaceFontName=Default

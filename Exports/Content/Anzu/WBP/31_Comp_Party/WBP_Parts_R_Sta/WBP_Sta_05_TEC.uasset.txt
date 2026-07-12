@@ -1,0 +1,8 @@
+Text_1=
+Text_2=74B9A993498C630262BEEDACAEF90815
+Text_3=TEC
+TypefaceFontName=Default
+Text_1=
+Text_2=8635AEC547487AF0E138C8A71EFA7C4F
+Text_3=88888
+TypefaceFontName=Default

@@ -1,0 +1,6 @@
+SCSVariableName=Widget
+SCSVariableName=TextRender
+InternalVariableName=DefaultSceneRoot
+Text_1=
+Text_2=423176854BD421B5D1B278870DD61D58
+Text_3=Company

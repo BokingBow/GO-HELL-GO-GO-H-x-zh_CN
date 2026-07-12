@@ -1,0 +1,10 @@
+﻿Key,Value
+Name,Price_Slot
+BindingName,Price_Slot
+PropertyName,RenderTransform
+PropertyPath,RenderTransform
+PropertyName,RenderOpacity
+PropertyPath,RenderOpacity
+WidgetName,Price_Slot
+SlotWidgetName,None
+DisplayLabel,Anim_Slot

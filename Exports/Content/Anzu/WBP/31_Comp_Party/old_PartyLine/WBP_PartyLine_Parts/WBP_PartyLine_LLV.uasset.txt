@@ -1,0 +1,4 @@
+Text_1=
+Text_2=00ED89B84DFD1855853FEFB53360065D
+Text_3=10
+TypefaceFontName=Light

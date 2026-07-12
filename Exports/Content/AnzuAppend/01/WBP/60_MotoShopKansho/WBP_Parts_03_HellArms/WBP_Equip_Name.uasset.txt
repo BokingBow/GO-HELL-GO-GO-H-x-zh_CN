@@ -1,0 +1,4 @@
+Text_1=
+Text_2=20B7FBD8491C625B39A7BFAC6C0BB109
+Text_3=イアイドー
+TypefaceFontName=Default

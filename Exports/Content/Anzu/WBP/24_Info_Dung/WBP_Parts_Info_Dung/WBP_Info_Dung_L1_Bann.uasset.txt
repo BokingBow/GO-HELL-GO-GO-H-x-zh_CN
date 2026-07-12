@@ -1,0 +1,4 @@
+Text_1=
+Text_2=5D96B94240D703F4FA9CC2B136B87DE8
+Text_3=工事現場
+TypefaceFontName=Default

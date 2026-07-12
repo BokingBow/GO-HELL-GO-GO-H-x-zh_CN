@@ -1,0 +1,4 @@
+FuncText2=ロード終了
+FuncText2=ロードアニメーション終了
+FuncText2=ロード画面表示済
+FuncText9=ロード画面表示

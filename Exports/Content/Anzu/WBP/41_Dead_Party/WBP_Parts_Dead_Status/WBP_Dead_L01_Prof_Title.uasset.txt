@@ -1,0 +1,4 @@
+Text_1=
+Text_2=9C340EF040CBA164D5628EA2DA1444D5
+Text_3=プロフィール
+TypefaceFontName=Default

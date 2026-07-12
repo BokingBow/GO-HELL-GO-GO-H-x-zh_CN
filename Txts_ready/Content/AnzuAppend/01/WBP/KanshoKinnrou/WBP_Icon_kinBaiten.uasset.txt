@@ -1,13 +1,13 @@
 FuncText0=売店クリック
 Text_1=
 Text_2=77F45D244E4640C2105E6AA5F8EF7A27
-Text_3=売店
+Text_3=商店
 TypefaceFontName=Default
 Text_1=
 Text_2=77F45D244E4640C2105E6AA5F8EF7A27
-Text_3=売店
+Text_3=商店
 TypefaceFontName=Default
 Text_1=
 Text_2=77F45D244E4640C2105E6AA5F8EF7A27
-Text_3=売店
+Text_3=商店
 TypefaceFontName=Default

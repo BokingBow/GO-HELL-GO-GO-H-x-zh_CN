@@ -1,0 +1,8 @@
+Text_1=
+Text_2=CC617ACF4072D97BB1EBCE91D4D17892
+Text_3=一天一份的夜宵配给
+TypefaceFontName=Default
+Text_1=
+Text_2=50B20B224B826CF692F060BB5A6FA01B
+Text_3=福利待遇-夜宵补助
+TypefaceFontName=Default

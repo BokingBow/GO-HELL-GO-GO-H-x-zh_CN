@@ -583,9 +583,26 @@ def cmd_import_changed(args):
                 print(f"🗑️ 删除: {rel} ({ext})")
 
     # 新增/修改
-    ok = fail = 0
+    ok = fail = skip = 0
+
+    # 检查手动维护清单
+    manual_skip = set()
+    if args.manifest and os.path.exists(args.manifest):
+        with open(args.manifest, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    manual_skip.add(line)
+        if manual_skip:
+            print(f"手动维护清单: {len(manual_skip)} 个文件将被跳过")
+
     for rel in changed:
         rel_stripped = rel[len(txt_rel):] if rel.startswith(txt_rel) else rel
+        # 检查是否在手动维护清单中
+        if rel in manual_skip:
+            print(f"⏭️ 跳过 {rel} — 位于手动维护清单")
+            skip += 1
+            continue
         imported = import_one(rel_stripped, txt_dir, args.project_dir, args.output, args.tool)
         if imported:
             ok += 1
@@ -593,6 +610,8 @@ def cmd_import_changed(args):
             fail += 1
 
     summary = f"\n完成 — 成功: {ok}  失败: {fail}"
+    if skip:
+        summary += f"  手动跳过: {skip}"
     if deleted:
         summary += f"  从 PatchOutput 移除: {len(deleted)} 个文件"
     print(summary)
@@ -835,6 +854,7 @@ def main():
     p.add_argument('--output', required=True, help='PatchOutput 持久化目录')
     p.add_argument('--since', default='HEAD', help='git diff 对比基线（默认 HEAD，对比工作区）')
     p.add_argument('--force', action='store_true', help='跳过 git 检测，全量导入')
+    p.add_argument('--manifest', help='手动维护清单文件（每行一个相对路径，清单内文件跳过导入）')
 
     # 8. prepare
     p = sub.add_parser('prepare', help='复制 .txt+.uasset+.uexp 配对文件')

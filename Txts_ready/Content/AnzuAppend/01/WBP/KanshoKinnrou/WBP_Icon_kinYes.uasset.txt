@@ -1,5 +1,5 @@
 FuncText0=亡者クリック
 Text_1=
 Text_2=CE26ACD145553E09CDED0FA535BE85FB
-Text_3=はい
+Text_3=是
 TypefaceFontName=Default

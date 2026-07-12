@@ -1,13 +1,13 @@
 FuncText0=清掃クリック
 Text_1=
 Text_2=BB640B6243B37295F0C3E7B3F59D05EE
-Text_3=清掃
+Text_3=清扫
 TypefaceFontName=Default
 Text_1=
 Text_2=AF530E46430D84536920AFA60FDD4AE6
-Text_3=清掃
+Text_3=清扫
 TypefaceFontName=Default
 Text_1=
 Text_2=712AFBD84AA43BB50471048CB0BD5EF2
-Text_3=清掃
+Text_3=清扫
 TypefaceFontName=Default

@@ -2,10 +2,11 @@
 
 ___《ゴーヘルゴー 業》___ 汉化补丁。  
 __目前仍在测试中。很有可能出现报错。请尽可能注意存档，避免数据丢失。__  
-__~~已经确认暂不支持官方发布的升级用补丁，若强行加载将导致游戏崩溃。（可能）将在未来修复。~~__已支持，请查看 Release 说明。__
 
 请在 Release 中下载 `ChineseTest_1_P.pak` ，将其置于以下路径：  
 `.\gohellgo\Content\Paks`
+
+也可以在本项目根目录处下载常时更新的 `ChineseTest_1_P.pak` 。但此文件为测试用版本，可能会更容易使游戏崩溃。
 
 本汉化使用了 [霞鹜新晰黑](https://github.com/lxgw/LxgwNeoXiHei) 与 [霞鹜漫黑](https://github.com/lxgw/LxgwMarkerGothic) 。
 
@@ -103,7 +104,7 @@ python ue4_localization_toolkit.py import-changed --dir ./Txts_ready --tool "pat
 ## 依赖
 
 - Python 3.7+
-- [UE4localizationsTool](https://github.com/DrAppleXX/UE4localizationsTool)（[下载](https://github.com/DrAppleXX/UE4localizationsTool/releases)）
+- UE4localizationsTool
 - UnrealPak（UE 4.27 引擎自带）
 
 ## 环境

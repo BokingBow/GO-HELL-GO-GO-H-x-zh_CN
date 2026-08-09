@@ -13,7 +13,7 @@ __目前仍在测试中。很有可能出现报错。请尽可能注意存档，
 ## 目录结构
 
 ```text
-├── ue4_localization_toolkit.py   # 核心工具箱（CLI，子命令驱动）
+├── ue4_localization_toolkit.py    # 核心工具箱（CLI，子命令驱动）
 ├── first.bat                      # 一键增量导入变更
 ├── oneclick.bat                   # 全流程：导入 → 生成清单 → 打包 PAK
 ├── list.py                        # 生成 UnrealPak 打包清单

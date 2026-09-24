@@ -1,3 +1,5 @@
 /gohellgo
 /__pycache__
 *.bak
+*.af
+.gitignore
